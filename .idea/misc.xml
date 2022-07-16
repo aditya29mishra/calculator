@@ -5,9 +5,13 @@
       <map>
         <entry key="..\:/projects/calculator/app/src/main/res/drawable/background_button.xml" value="0.2595" />
         <entry key="..\:/projects/calculator/app/src/main/res/drawable/background_button_expressions.xml" value="0.2595" />
+        <entry key="..\:/projects/calculator/app/src/main/res/drawable/ic_baseline_backspace_24.xml" value="0.2555" />
         <entry key="..\:/projects/calculator/app/src/main/res/drawable/ic_calc.xml" value="0.2595" />
+        <entry key="..\:/projects/calculator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2555" />
         <entry key="..\:/projects/calculator/app/src/main/res/drawable/oval_light_blue_bg.xml" value="0.2595" />
-        <entry key="..\:/projects/calculator/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/projects/calculator/app/src/main/res/drawable/total_clear_blacground.xml" value="0.2545" />
+        <entry key="..\:/projects/calculator/app/src/main/res/drawable/zero_back.xml" value="0.2545" />
+        <entry key="..\:/projects/calculator/app/src/main/res/layout/activity_main.xml" value="0.2" />
       </map>
     </option>
   </component>

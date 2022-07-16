@@ -26,4 +26,13 @@
     <string name="about">This Application was Created Out of the developer\'s curiosity towards Kotlin.\n\nIt is fully open source and can be found on github at:\n\nhttps://github.com/the-rebooted-coder/Friendly-Kotlin-Calculator</string>
     <string name="opening">Open Calculator</string>
     <string name="del">del</string>
+    <string name="root">root</string>
+    <string name="power">^</string>
+    <string name="pi">pi</string>
+    <string name="fact">!</string>
+    <string name="Root">√</string>
+    <string name="Fact">!</string>
+    <string name="Power">^</string>
+    <string name="PI">π</string>
+    <string name="Del">del</string>
 </resources>

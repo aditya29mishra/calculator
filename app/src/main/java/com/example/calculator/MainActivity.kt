@@ -1,6 +1,7 @@
 package com.example.calculator
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -85,23 +86,27 @@ class MainActivity : AppCompatActivity() {
         }
 
         Equals.setOnClickListener {
-            val text = input.text.toString()
-            val expression = ExpressionBuilder(text).build()
-            val result = expression.evaluate()
-            val longResult = result.toLong()
+            try {
+                val text = input.text.toString()
+                val expression = ExpressionBuilder(text).build()
+                val result = expression.evaluate()
+                val longResult = result.toLong()
 
-            if (result == longResult.toDouble()) {
-                answer.text = longResult.toString()
-            } else {
-                answer.text = result.toString()
+                if (result == longResult.toDouble()) {
+                    answer.text = longResult.toString()
+                } else {
+                    answer.text = result.toString()
+                }
+            } catch (e: Exception) {
+                answer.text = getString(R.string.error)
             }
         }
 
         back.setOnClickListener {
             var text = input.text.toString()
             if (text.isNotEmpty()) {
-                text=text.substring(0,text.length-1)
-                input.text=text
+                text = text.substring(0, text.length - 1)
+                input.text = text
             }
             answer.text = ""
         }
@@ -114,5 +119,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             input.append(string)
         }
+
+        Log.d("my activity","output to log")
     }
 }
