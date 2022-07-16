@@ -12,65 +12,65 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
 
         num0.setOnClickListener {
-            evaluateExpression("0", clear = true)
+            evaluateExpression("0", clear = false)
         }
 
         num1.setOnClickListener {
-            evaluateExpression("1", clear = true)
+            evaluateExpression("1", clear = false)
         }
 
         num2.setOnClickListener {
-            evaluateExpression("2", clear = true)
+            evaluateExpression("2", clear = false)
         }
         num3.setOnClickListener {
-            evaluateExpression("3", clear = true)
+            evaluateExpression("3", clear = false)
         }
 
         num4.setOnClickListener {
-            evaluateExpression("4", clear = true)
+            evaluateExpression("4", clear =false)
         }
 
         num5.setOnClickListener {
-            evaluateExpression("5", clear = true)
+            evaluateExpression("5", clear = false)
         }
 
         num6.setOnClickListener {
-            evaluateExpression("6", clear = true)
+            evaluateExpression("6", clear = false)
         }
 
         num7.setOnClickListener {
-            evaluateExpression("7", clear = true)
+            evaluateExpression("7", clear = false)
         }
 
         num8.setOnClickListener {
-            evaluateExpression("8", clear = true)
+            evaluateExpression("8", clear = false)
         }
 
         num9.setOnClickListener {
-            evaluateExpression("9", clear = true)
+            evaluateExpression("9", clear = false)
 
         Divide.setOnClickListener {
-            evaluateExpression("/", clear = true)
+            evaluateExpression("/", clear =false)
         }
 
         Multiply.setOnClickListener {
-            evaluateExpression("*", clear = true)
+            evaluateExpression("*", clear = false)
         }
 
         Add.setOnClickListener {
-            evaluateExpression("*", clear = true)
+            evaluateExpression("*", clear = false)
         }
 
         Minus.setOnClickListener {
-            evaluateExpression("*", clear = true)
+            evaluateExpression("*", clear =false)
         }
 
         startBracket.setOnClickListener {
-            evaluateExpression("*", clear = true)
+            evaluateExpression("*", clear = false)
         }
 
         closeBracket.setOnClickListener {
-            evaluateExpression("*", clear = true)
+            evaluateExpression("*", clear = false)
         }
 
         clear.setOnClickListener {
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity()
        }
     }
 
-   private fun evaluateExpression(string: String, clear: Boolean) {
+    fun evaluateExpression(string: String, clear: Boolean) {
       if (clear) {
         input.text=""
         answer.text=""
@@ -110,6 +110,6 @@ class MainActivity : AppCompatActivity()
       else {
         input.append(string)
       }
-   }
 
+   }
 }
