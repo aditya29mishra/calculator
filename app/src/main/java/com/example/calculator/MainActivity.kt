@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
 
-class MainActivity : AppCompatActivity()
-{
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         num0.setOnClickListener {
             evaluateExpression("0", clear = false)
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity()
         }
 
         num4.setOnClickListener {
-            evaluateExpression("4", clear =false)
+            evaluateExpression("4", clear = false)
         }
 
         num5.setOnClickListener {
@@ -48,9 +49,14 @@ class MainActivity : AppCompatActivity()
 
         num9.setOnClickListener {
             evaluateExpression("9", clear = false)
+        }
+
+        dot.setOnClickListener {
+            evaluateExpression(".", clear = false)
+        }
 
         Divide.setOnClickListener {
-            evaluateExpression("/", clear =false)
+            evaluateExpression("/", clear = false)
         }
 
         Multiply.setOnClickListener {
@@ -62,7 +68,7 @@ class MainActivity : AppCompatActivity()
         }
 
         Minus.setOnClickListener {
-            evaluateExpression("-", clear =false)
+            evaluateExpression("-", clear = false)
         }
 
         startBracket.setOnClickListener {
@@ -78,38 +84,35 @@ class MainActivity : AppCompatActivity()
             answer.text = ""
         }
 
-       Equals.setOnClickListener {
-           val text = input.text.toString()
-           val expression = ExpressionBuilder(text).build()
-           val result = expression.evaluate()
-           val longResult = result.toLong()
+        Equals.setOnClickListener {
+            val text = input.text.toString()
+            val expression = ExpressionBuilder(text).build()
+            val result = expression.evaluate()
+            val longResult = result.toLong()
 
-           if (result == longResult.toDouble()) {
-               answer.text = longResult.toString()
-           }
-           else {
-           answer.text = result.toString()
-           }
+            if (result == longResult.toDouble()) {
+                answer.text = longResult.toString()
+            } else {
+                answer.text = result.toString()
+            }
+        }
 
-       back.setOnClickListener {
-          val text = input.text.toString()
-             if (text.isNotEmpty()) {
-                 input.text = text.drop(1)
-             }
-                 answer.text = ""
-             }
-          }
-       }
+        back.setOnClickListener {
+            var text = input.text.toString()
+            if (text.isNotEmpty()) {
+                text=text.substring(0,text.length-1)
+                input.text=text
+            }
+            answer.text = ""
+        }
     }
 
     fun evaluateExpression(string: String, clear: Boolean) {
-      if (clear) {
-        input.text=""
-        answer.text=""
+        if (clear) {
+            input.text = ""
+            answer.text = ""
+        } else {
+            input.append(string)
         }
-      else {
-        input.append(string)
-      }
-
-   }
+    }
 }
