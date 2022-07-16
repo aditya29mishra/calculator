@@ -58,19 +58,19 @@ class MainActivity : AppCompatActivity()
         }
 
         Add.setOnClickListener {
-            evaluateExpression("*", clear = false)
+            evaluateExpression("+", clear = false)
         }
 
         Minus.setOnClickListener {
-            evaluateExpression("*", clear =false)
+            evaluateExpression("-", clear =false)
         }
 
         startBracket.setOnClickListener {
-            evaluateExpression("*", clear = false)
+            evaluateExpression("(", clear = false)
         }
 
         closeBracket.setOnClickListener {
-            evaluateExpression("*", clear = false)
+            evaluateExpression(")", clear = false)
         }
 
         clear.setOnClickListener {
