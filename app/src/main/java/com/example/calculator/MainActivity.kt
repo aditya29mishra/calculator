@@ -58,9 +58,6 @@ class MainActivity : AppCompatActivity() {
         dot.setOnClickListener {
             evaluateExpression(".", clear = false)
         }
-        pi.setOnClickListener {
-
-        }
 
         Divide.setOnClickListener {
             evaluateExpression("/", clear = false)
@@ -114,9 +111,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        power.setOnClickListener{
 
-        }
 
         Equals.setOnClickListener {
             try {

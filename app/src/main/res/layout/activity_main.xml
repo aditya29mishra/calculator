@@ -81,7 +81,7 @@
                 android:layout_height="match_parent"
                 style="@style/opreatorEpressions"
                 android:background="@drawable/zero_back"
-                android:text="@string/Power"/>
+               />
 
             <TextView
                 android:id="@+id/pi"
@@ -89,7 +89,7 @@
                 android:layout_height="match_parent"
                 style="@style/opreatorEpressions"
                 android:background="@drawable/zero_back"
-                android:text="@string/PI"/>
+                />
 
         </LinearLayout>
 
