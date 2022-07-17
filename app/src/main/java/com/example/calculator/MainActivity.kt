@@ -1,12 +1,15 @@
 package com.example.calculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
+import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -55,6 +58,9 @@ class MainActivity : AppCompatActivity() {
         dot.setOnClickListener {
             evaluateExpression(".", clear = false)
         }
+        pi.setOnClickListener {
+
+        }
 
         Divide.setOnClickListener {
             evaluateExpression("/", clear = false)
@@ -85,6 +91,33 @@ class MainActivity : AppCompatActivity() {
             answer.text = ""
         }
 
+        fact.setOnClickListener {
+            try {
+                val value = input.text.toString().toInt()
+                val fact = factorial(value)
+                input.text = "$value!"
+                answer.text = "$fact"
+            } catch (e: Exception) {
+                answer.text = getString(R.string.error)
+            }
+        }
+
+        root.setOnClickListener {
+            try {
+                val str: String = input.text.toString()
+                val r = sqrt(str.toDouble())
+                val result = r.toString()
+                input.text="√$str"
+                answer.text = result
+            }catch (e: Exception) {
+                answer.text = getString(R.string.error)
+            }
+        }
+
+        power.setOnClickListener{
+
+        }
+
         Equals.setOnClickListener {
             try {
                 val text = input.text.toString()
@@ -112,6 +145,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun factorial(n: Int): Int {
+        return if (n == 1 || n == 0) 1 else n * factorial(n - 1)
+    }
+
     fun evaluateExpression(string: String, clear: Boolean) {
         if (clear) {
             input.text = ""
@@ -120,6 +157,6 @@ class MainActivity : AppCompatActivity() {
             input.append(string)
         }
 
-        Log.d("my activity","output to log")
+        Log.d("my activity", "output to log")
     }
 }
